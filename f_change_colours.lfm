@@ -1,0 +1,215 @@
+object For_ChangeColours: TFor_ChangeColours
+  Left = 322
+  Height = 225
+  Top = 424
+  Width = 238
+  BorderIcons = [biSystemMenu]
+  Caption = 'Colour Key'
+  ClientHeight = 225
+  ClientWidth = 238
+  Position = poScreenCenter
+  LCLVersion = '1.4.0.4'
+  object GroBox_ColourKey: TGroupBox
+    Left = 16
+    Height = 200
+    Top = 16
+    Width = 210
+    ClientHeight = 180
+    ClientWidth = 206
+    TabOrder = 0
+    object GroBox_CellColour: TGroupBox
+      Left = 8
+      Height = 120
+      Top = 8
+      Width = 88
+      Caption = 'Cell Colour'
+      ClientHeight = 100
+      ClientWidth = 84
+      TabOrder = 0
+      object LabEdi_CellEmpty: TLabeledEdit
+        Tag = 1
+        Left = 56
+        Height = 23
+        Top = 8
+        Width = 16
+        Color = clWhite
+        EditLabel.AnchorSideTop.Control = LabEdi_CellEmpty
+        EditLabel.AnchorSideTop.Side = asrCenter
+        EditLabel.AnchorSideRight.Control = LabEdi_CellEmpty
+        EditLabel.AnchorSideBottom.Control = LabEdi_CellEmpty
+        EditLabel.AnchorSideBottom.Side = asrBottom
+        EditLabel.Left = 19
+        EditLabel.Height = 15
+        EditLabel.Top = 12
+        EditLabel.Width = 34
+        EditLabel.Caption = 'Empty'
+        EditLabel.ParentColor = False
+        LabelPosition = lpLeft
+        TabOrder = 2
+        OnClick = LabEdi_CellClick
+      end
+      object LabEdi_CellSame: TLabeledEdit
+        Tag = 2
+        Left = 56
+        Height = 23
+        Top = 40
+        Width = 16
+        Color = clLime
+        EditLabel.AnchorSideTop.Control = LabEdi_CellSame
+        EditLabel.AnchorSideTop.Side = asrCenter
+        EditLabel.AnchorSideRight.Control = LabEdi_CellSame
+        EditLabel.AnchorSideBottom.Control = LabEdi_CellSame
+        EditLabel.AnchorSideBottom.Side = asrBottom
+        EditLabel.Left = 24
+        EditLabel.Height = 15
+        EditLabel.Top = 44
+        EditLabel.Width = 29
+        EditLabel.Caption = 'Same'
+        EditLabel.ParentColor = False
+        LabelPosition = lpLeft
+        TabOrder = 1
+        OnClick = LabEdi_CellClick
+      end
+      object LabEdi_CellDifferent: TLabeledEdit
+        Tag = 3
+        Left = 56
+        Height = 23
+        Top = 72
+        Width = 16
+        Color = clRed
+        EditLabel.AnchorSideTop.Control = LabEdi_CellDifferent
+        EditLabel.AnchorSideTop.Side = asrCenter
+        EditLabel.AnchorSideRight.Control = LabEdi_CellDifferent
+        EditLabel.AnchorSideBottom.Control = LabEdi_CellDifferent
+        EditLabel.AnchorSideBottom.Side = asrBottom
+        EditLabel.Left = 7
+        EditLabel.Height = 15
+        EditLabel.Top = 76
+        EditLabel.Width = 46
+        EditLabel.Caption = 'Different'
+        EditLabel.ParentColor = False
+        LabelPosition = lpLeft
+        TabOrder = 0
+        OnClick = LabEdi_CellClick
+      end
+    end
+    object GroBox_TextColour: TGroupBox
+      Left = 112
+      Height = 120
+      Top = 8
+      Width = 88
+      Caption = 'Text Colour'
+      ClientHeight = 100
+      ClientWidth = 84
+      TabOrder = 2
+      object LabEdi_TextEmpty: TLabeledEdit
+        Left = 56
+        Height = 23
+        Top = 8
+        Width = 16
+        Color = clBlack
+        EditLabel.AnchorSideTop.Control = LabEdi_TextEmpty
+        EditLabel.AnchorSideTop.Side = asrCenter
+        EditLabel.AnchorSideRight.Control = LabEdi_TextEmpty
+        EditLabel.AnchorSideBottom.Control = LabEdi_TextEmpty
+        EditLabel.AnchorSideBottom.Side = asrBottom
+        EditLabel.Left = 19
+        EditLabel.Height = 15
+        EditLabel.Top = 12
+        EditLabel.Width = 34
+        EditLabel.Caption = 'Empty'
+        EditLabel.ParentColor = False
+        LabelPosition = lpLeft
+        TabOrder = 1
+      end
+      object LabEdi_TextSame: TLabeledEdit
+        Left = 56
+        Height = 23
+        Top = 40
+        Width = 16
+        Color = clBlack
+        EditLabel.AnchorSideTop.Control = LabEdi_TextSame
+        EditLabel.AnchorSideTop.Side = asrCenter
+        EditLabel.AnchorSideRight.Control = LabEdi_TextSame
+        EditLabel.AnchorSideBottom.Control = LabEdi_TextSame
+        EditLabel.AnchorSideBottom.Side = asrBottom
+        EditLabel.Left = 24
+        EditLabel.Height = 15
+        EditLabel.Top = 44
+        EditLabel.Width = 29
+        EditLabel.Caption = 'Same'
+        EditLabel.ParentColor = False
+        LabelPosition = lpLeft
+        TabOrder = 2
+      end
+      object LabEdi_TextDifferent: TLabeledEdit
+        Left = 56
+        Height = 23
+        Top = 72
+        Width = 16
+        Color = clBlack
+        EditLabel.AnchorSideTop.Control = LabEdi_TextDifferent
+        EditLabel.AnchorSideTop.Side = asrCenter
+        EditLabel.AnchorSideRight.Control = LabEdi_TextDifferent
+        EditLabel.AnchorSideBottom.Control = LabEdi_TextDifferent
+        EditLabel.AnchorSideBottom.Side = asrBottom
+        EditLabel.Left = 7
+        EditLabel.Height = 15
+        EditLabel.Top = 76
+        EditLabel.Width = 46
+        EditLabel.Caption = 'Different'
+        EditLabel.ParentColor = False
+        LabelPosition = lpLeft
+        TabOrder = 0
+      end
+    end
+    object BitBtn_Cancel: TBitBtn
+      Left = 8
+      Height = 30
+      Top = 136
+      Width = 88
+      DefaultCaption = True
+      Kind = bkCancel
+      Layout = blGlyphRight
+      ModalResult = 2
+      TabOrder = 1
+    end
+    object BitBtn1: TBitBtn
+      Left = 8
+      Height = 30
+      Top = 312
+      Width = 88
+      Caption = '&Save'
+      Kind = bkYesToAll
+      ModalResult = 10
+      TabOrder = 3
+    end
+  end
+  object ColDia_ChangeColour: TColorDialog
+    Color = clBlack
+    CustomColors.Strings = (
+      'ColorA=000000'
+      'ColorB=000080'
+      'ColorC=008000'
+      'ColorD=008080'
+      'ColorE=800000'
+      'ColorF=800080'
+      'ColorG=808000'
+      'ColorH=808080'
+      'ColorI=C0C0C0'
+      'ColorJ=0000FF'
+      'ColorK=00FF00'
+      'ColorL=00FFFF'
+      'ColorM=FF0000'
+      'ColorN=FF00FF'
+      'ColorO=FFFF00'
+      'ColorP=FFFFFF'
+      'ColorQ=C0DCC0'
+      'ColorR=F0CAA6'
+      'ColorS=F0FBFF'
+      'ColorT=A4A0A0'
+    )
+    left = 264
+    top = 48
+  end
+end

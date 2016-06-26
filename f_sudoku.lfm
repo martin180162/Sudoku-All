@@ -1,0 +1,472 @@
+object For_Sudoku: TFor_Sudoku
+  Left = 168
+  Height = 459
+  Hint = 'Click Either [ Select or New Puzzle ] '
+  Top = 204
+  Width = 283
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
+  Caption = 'Sudoku'
+  ClientHeight = 439
+  ClientWidth = 283
+  Menu = MaiMen_Sudoku
+  OnCreate = FormCreate
+  OnMouseEnter = FormMouseEnter
+  Position = poScreenCenter
+  LCLVersion = '1.4.4.0'
+  Visible = True
+  object GroBox_PuzzleGrid: TGroupBox
+    Left = 20
+    Height = 416
+    Top = 16
+    Width = 248
+    ClientHeight = 396
+    ClientWidth = 244
+    TabOrder = 0
+    object Lab_Puzzle: TLabel
+      Left = 96
+      Height = 15
+      Top = 0
+      Width = 36
+      Caption = 'Puzzle'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object StrGri_SudokuPuzzle: TStringGrid
+      Tag = 1
+      Left = 16
+      Height = 208
+      Top = 24
+      Width = 208
+      Color = clWhite
+      ColCount = 10
+      DefaultColWidth = 20
+      DefaultRowHeight = 20
+      Options = [goFixedVertLine, goFixedHorzLine, goRangeSelect, goSmoothScroll]
+      RowCount = 10
+      ScrollBars = ssNone
+      TabOrder = 0
+      OnDragDrop = StrGri_SudokuPuzzleDragDrop
+      OnDragOver = StrGri_SudokuPuzzleDragOver
+      OnDrawCell = StrGri_DrawCell
+      OnMouseDown = StrGri_SudokuPuzzleMouseDown
+    end
+    object Lab_Line1: TLabel
+      Left = 16
+      Height = 15
+      Top = 232
+      Width = 210
+      Caption = '------------------------------------------'
+      ParentColor = False
+    end
+  end
+  object GroBox_SolutionGrid: TGroupBox
+    Left = 288
+    Height = 258
+    Top = 16
+    Width = 224
+    ClientHeight = 238
+    ClientWidth = 220
+    TabOrder = 1
+    Visible = False
+    object StrGri_SudokuSolution: TStringGrid
+      Tag = 2
+      Left = 8
+      Height = 204
+      Top = 24
+      Width = 204
+      ColCount = 10
+      DefaultColWidth = 20
+      DefaultRowHeight = 20
+      Options = [goFixedVertLine, goFixedHorzLine, goRangeSelect, goSmoothScroll]
+      RowCount = 10
+      ScrollBars = ssNone
+      TabOrder = 0
+      OnDrawCell = StrGri_DrawCell
+    end
+    object Lab_Solution: TLabel
+      Left = 80
+      Height = 15
+      Top = 0
+      Width = 46
+      Caption = 'Solution'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+  end
+  object GroBox_ColourGrid: TGroupBox
+    Left = 288
+    Height = 266
+    Top = 280
+    Width = 224
+    ClientHeight = 246
+    ClientWidth = 220
+    TabOrder = 2
+    Visible = False
+    object StrGri_SudokuColourGrid: TStringGrid
+      Tag = 2
+      Left = 8
+      Height = 204
+      Top = 24
+      Width = 204
+      ColCount = 10
+      DefaultColWidth = 20
+      DefaultRowHeight = 20
+      Options = [goFixedVertLine, goFixedHorzLine, goRangeSelect, goSmoothScroll]
+      RowCount = 10
+      ScrollBars = ssNone
+      TabOrder = 0
+      OnDrawCell = StrGri_DrawCell
+    end
+    object Lab_ColourGrid: TLabel
+      Left = 80
+      Height = 15
+      Top = 0
+      Width = 63
+      Caption = 'Colour Grid'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+  end
+  object GroBox_Selection: TGroupBox
+    Left = 36
+    Height = 117
+    Top = 280
+    Width = 216
+    ClientHeight = 97
+    ClientWidth = 212
+    TabOrder = 3
+    object ComBox_Ratings: TComboBox
+      Left = 0
+      Height = 23
+      Top = 0
+      Width = 96
+      ItemHeight = 15
+      ItemIndex = 0
+      Items.Strings = (
+        'Easy'
+        'Moderate'
+        'Challenging'
+      )
+      OnChange = ComBox_RatingsChange
+      OnClick = ComBox_RatingsClick
+      Style = csDropDownList
+      TabOrder = 0
+      Text = 'Easy'
+    end
+    object But_SudokuNewPuzzle: TButton
+      Left = 112
+      Height = 25
+      Top = -2
+      Width = 92
+      Caption = 'New Puzzle'
+      OnClick = But_SudokuNewPuzzleClick
+      TabOrder = 1
+    end
+    object StrGri_DragToPuzzle: TStringGrid
+      Tag = 3
+      Left = 0
+      Height = 44
+      Top = 40
+      Width = 208
+      ColCount = 10
+      DefaultColWidth = 20
+      DefaultRowHeight = 20
+      RowCount = 2
+      ScrollBars = ssNone
+      TabOrder = 2
+      OnDragOver = StrGri_DragToPuzzleDragOver
+      OnMouseDown = StrGri_DragToPuzzleMouseDown
+    end
+    object CheBox_ShowSolution: TCheckBox
+      Left = 56
+      Height = 19
+      Top = 104
+      Width = 96
+      Caption = 'Show Solution'
+      OnClick = CheBox_ShowSolutionClick
+      TabOrder = 3
+    end
+  end
+  object GroBox_OldNewGrid: TGroupBox
+    Left = 36
+    Height = 155
+    Top = 443
+    Width = 200
+    ClientHeight = 135
+    ClientWidth = 196
+    TabOrder = 4
+    Visible = False
+    object Lab_OldGrid: TLabel
+      Left = 29
+      Height = 15
+      Top = 8
+      Width = 61
+      Caption = 'Old   Grid :-'
+      ParentColor = False
+    end
+    object Lab_NewGrid: TLabel
+      Left = 29
+      Height = 15
+      Top = 29
+      Width = 60
+      Caption = 'New Grid :-'
+      ParentColor = False
+    end
+    object Lab_Line2: TLabel
+      Left = 0
+      Height = 15
+      Top = 70
+      Width = 210
+      Caption = '------------------------------------------'
+      ParentColor = False
+    end
+    object Lab_NewGridHelp: TLabel
+      Left = 0
+      Height = 15
+      Top = 89
+      Width = 187
+      Caption = 'Click Either [ Select or New Puzzle ] '
+      ParentColor = False
+    end
+    object Lab_NewGridHelp1: TLabel
+      Left = 61
+      Height = 15
+      Top = 110
+      Width = 62
+      Caption = 'to choose it'
+      ParentColor = False
+    end
+  end
+  object GroBox_Stopwatch: TGroupBox
+    Left = 43
+    Height = 139
+    Top = 280
+    Width = 200
+    ClientHeight = 119
+    ClientWidth = 196
+    TabOrder = 5
+    Visible = False
+    object Lab_StopWatch: TLabel
+      Left = 55
+      Height = 15
+      Top = 54
+      Width = 58
+      Caption = 'StopWatch'
+      ParentColor = False
+    end
+    object But_StartStopWatch: TButton
+      Left = 12
+      Height = 25
+      Top = 78
+      Width = 75
+      Caption = 'Start'
+      OnClick = But_StartStopWatchClick
+      TabOrder = 0
+    end
+    object But_EndStopWatch: TButton
+      Left = 103
+      Height = 25
+      Top = 78
+      Width = 75
+      Caption = 'Stop'
+      OnClick = But_EndStopWatchClick
+      TabOrder = 1
+    end
+  end
+  object MaiMen_Sudoku: TMainMenu
+    left = 120
+    top = 96
+    object MenIte_Sudoku_Settings: TMenuItem
+      Caption = 'Settings :- ( 1 - 9 )'
+    end
+    object MenIte_Sudoku_Select: TMenuItem
+      Caption = 'Select'
+      OnClick = MenIte_Sudoku_SelectClick
+      object MenIte_Sudoku_Select_1To9: TMenuItem
+        Caption = '( 1 - 9 )'
+        Bitmap.Data = {
+          76060000424D7606000000000000360000002800000014000000140000000100
+          2000000000004006000064000000640000000000000000000000FFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF21AB74FF21AB74FF21AB
+          74FF21AB74FF21AB74FF21AB74FF21AB74FF21AB74FF21AB74FF21AB74FF21AB
+          74FF21AB74FF21AB74FF21AB74FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFF21AB74FF94DFC1FF94DFC1FF94DFC1FF94DFC1FF94DFC1FF94DF
+          C1FF94DFC1FF94DFC1FF94DFC1FF94DFC1FF94DFC1FF94DFC1FF21AB74FFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF21AB74FF97E1C4FF2DC2
+          86FF2DC286FF2DC286FF2DC286FF2DC286FF2DC286FF2DC286FF2DC286FF2DC2
+          86FF2DC286FF97E1C4FF21AB74FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFF21AB74FF97E1C4FF30C489FF30C489FF30C489FF40CA93FF63D3
+          A6FF30C489FF30C489FF30C489FF30C489FF30C489FF97E1C4FF21AB74FFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF21AB74FF97E1C4FF34C7
+          8CFF34C78CFF40CA93FFD9F4E9FFF3FCF8FF40CA93FF34C78CFF34C78CFF34C7
+          8CFF34C78CFF97E1C4FF21AB74FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFF21AB74FF9BE4C7FF34C78CFF34C78CFFD9F4E9FFFFFFFFFFFFFF
+          FFFFC0EEDCFF34C78CFF34C78CFF34C78CFF34C78CFF9BE4C7FF21AB74FFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF21AB74FF9BE4C7FF3DCE
+          94FF5ED5A6FFF3FCF8FF90E2C1FF90E2C1FFFFFFFFFF77DCB4FF3DCE94FF3DCE
+          94FF3DCE94FF9BE4C7FF21AB74FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFF21AB74FF9BE4C7FF3DCE94FF6EDAAFFF4CD49DFF3DCE94FF3DCE
+          94FFCEF3E4FFC0EEDCFF3DCE94FF3DCE94FF3DCE94FF9BE4C7FF21AB74FFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF21AB74FFA3EACEFF41D1
+          97FF41D197FF41D197FF41D197FF41D197FF59D7A4FFF3FCF8FF4CD49DFF41D1
+          97FF41D197FFA3EACEFF21AB74FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFF21AB74FFA3EACEFF44D39AFF44D39AFF44D39AFF44D39AFF44D3
+          9AFF44D39AFF97E8C8FF8AE3C0FF44D39AFF44D39AFFA3EACEFF21AB74FFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF21AB74FFA3EACEFF47D6
+          9DFF47D69DFF47D69DFF47D69DFF47D69DFF47D69DFF47D69DFF97E8C8FF47D6
+          9DFF47D69DFFA3EACEFF21AB74FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFF21AB74FFA3EACEFF4BD89FFF4BD89FFF4BD89FFF4BD89FFF4BD8
+          9FFF4BD89FFF4BD89FFF62DDABFF4BD89FFF4BD89FFFA3EACEFF21AB74FFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF21AB74FFA6EDD0FFA6ED
+          D0FFA6EDD0FFA6EDD0FFA6EDD0FFA6EDD0FFA6EDD0FFA6EDD0FFA6EDD0FFA6ED
+          D0FFA6EDD0FFA6EDD0FF21AB74FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFF21AB74FF21AB74FF21AB74FF21AB74FF21AB74FF21AB74FF21AB
+          74FF21AB74FF21AB74FF21AB74FF21AB74FF21AB74FF21AB74FF21AB74FFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        }
+        OnClick = MenIte_Sudoku_SelectClick
+      end
+      object MenIte_Sudoku_Select_Seperater1: TMenuItem
+        Caption = '------------'
+        Visible = False
+      end
+      object MenIte_Sudoku_Select_AToI: TMenuItem
+        Bitmap.Data = {
+          76060000424D7606000000000000360000002800000014000000140000000100
+          2000000000004006000064000000640000000000000000000000FFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF21AB74FF21AB74FF21AB
+          74FF21AB74FF21AB74FF21AB74FF21AB74FF21AB74FF21AB74FF21AB74FF21AB
+          74FF21AB74FF21AB74FF21AB74FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFF21AB74FF94DFC1FF94DFC1FF94DFC1FF94DFC1FF94DFC1FF94DF
+          C1FF94DFC1FF94DFC1FF94DFC1FF94DFC1FF94DFC1FF94DFC1FF21AB74FFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF21AB74FF97E1C4FF2DC2
+          86FF2DC286FF2DC286FF2DC286FF2DC286FF2DC286FF2DC286FF2DC286FF2DC2
+          86FF2DC286FF97E1C4FF21AB74FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFF21AB74FF97E1C4FF30C489FF30C489FF30C489FF40CA93FF63D3
+          A6FF30C489FF30C489FF30C489FF30C489FF30C489FF97E1C4FF21AB74FFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF21AB74FF97E1C4FF34C7
+          8CFF34C78CFF40CA93FFD9F4E9FFF3FCF8FF40CA93FF34C78CFF34C78CFF34C7
+          8CFF34C78CFF97E1C4FF21AB74FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFF21AB74FF9BE4C7FF34C78CFF34C78CFFD9F4E9FFFFFFFFFFFFFF
+          FFFFC0EEDCFF34C78CFF34C78CFF34C78CFF34C78CFF9BE4C7FF21AB74FFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF21AB74FF9BE4C7FF3DCE
+          94FF5ED5A6FFF3FCF8FF90E2C1FF90E2C1FFFFFFFFFF77DCB4FF3DCE94FF3DCE
+          94FF3DCE94FF9BE4C7FF21AB74FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFF21AB74FF9BE4C7FF3DCE94FF6EDAAFFF4CD49DFF3DCE94FF3DCE
+          94FFCEF3E4FFC0EEDCFF3DCE94FF3DCE94FF3DCE94FF9BE4C7FF21AB74FFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF21AB74FFA3EACEFF41D1
+          97FF41D197FF41D197FF41D197FF41D197FF59D7A4FFF3FCF8FF4CD49DFF41D1
+          97FF41D197FFA3EACEFF21AB74FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFF21AB74FFA3EACEFF44D39AFF44D39AFF44D39AFF44D39AFF44D3
+          9AFF44D39AFF97E8C8FF8AE3C0FF44D39AFF44D39AFFA3EACEFF21AB74FFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF21AB74FFA3EACEFF47D6
+          9DFF47D69DFF47D69DFF47D69DFF47D69DFF47D69DFF47D69DFF97E8C8FF47D6
+          9DFF47D69DFFA3EACEFF21AB74FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFF21AB74FFA3EACEFF4BD89FFF4BD89FFF4BD89FFF4BD89FFF4BD8
+          9FFF4BD89FFF4BD89FFF62DDABFF4BD89FFF4BD89FFFA3EACEFF21AB74FFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF21AB74FFA6EDD0FFA6ED
+          D0FFA6EDD0FFA6EDD0FFA6EDD0FFA6EDD0FFA6EDD0FFA6EDD0FFA6EDD0FFA6ED
+          D0FFA6EDD0FFA6EDD0FF21AB74FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFF21AB74FF21AB74FF21AB74FF21AB74FF21AB74FF21AB74FF21AB
+          74FF21AB74FF21AB74FF21AB74FF21AB74FF21AB74FF21AB74FF21AB74FFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+        }
+        OnClick = MenIte_Sudoku_SelectClick
+      end
+      object MenIte_Sudoku_Select_Characters: TMenuItem
+        Caption = '&Characters'
+        Visible = False
+      end
+      object MenIte_Sudoku_Select_Colours: TMenuItem
+        Caption = 'C&olours'
+        Visible = False
+      end
+      object MenIte_Sudoku_Select_Images: TMenuItem
+        Caption = '&Images'
+        Visible = False
+      end
+    end
+    object MenIte_Sudoku_File: TMenuItem
+      Caption = 'File'
+      object MenIte_Sudoku_File_Save: TMenuItem
+        Caption = 'Save'
+        OnClick = MenIte_Sudoku_FileClick
+      end
+      object MenIte_Sudoku_File_Load: TMenuItem
+        Caption = 'Load'
+        OnClick = MenIte_Sudoku_FileClick
+      end
+      object MenIte_Sudoku_File_Seperater2: TMenuItem
+        Caption = '------------------'
+      end
+      object MenIte_Sudoku_File_Close: TMenuItem
+        Caption = 'Close'
+        OnClick = MenIte_Sudoku_FileClick
+      end
+    end
+  end
+  object ColDia_CellAndText: TColorDialog
+    Color = clBlack
+    CustomColors.Strings = (
+      'ColorA=000000'
+      'ColorB=000080'
+      'ColorC=008000'
+      'ColorD=008080'
+      'ColorE=800000'
+      'ColorF=800080'
+      'ColorG=808000'
+      'ColorH=808080'
+      'ColorI=C0C0C0'
+      'ColorJ=0000FF'
+      'ColorK=00FF00'
+      'ColorL=00FFFF'
+      'ColorM=FF0000'
+      'ColorN=FF00FF'
+      'ColorO=FFFF00'
+      'ColorP=FFFFFF'
+      'ColorQ=C0DCC0'
+      'ColorR=F0CAA6'
+      'ColorS=F0FBFF'
+      'ColorT=A4A0A0'
+    )
+    left = 384
+    top = 96
+  end
+  object Tim_StopWatch: TTimer
+    OnTimer = Tim_StopWatchTimer
+    left = 120
+    top = 308
+  end
+end

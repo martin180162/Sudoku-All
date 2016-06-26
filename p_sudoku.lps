@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="9"/>
+    <BuildModes Active="Default"/>
+    <Units Count="20">
+      <Unit0>
+        <Filename Value="p_sudoku.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos Y="23"/>
+        <UsageCount Value="206"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="f_sudoku.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="For_Sudoku"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="322"/>
+        <CursorPos X="17" Y="328"/>
+        <UsageCount Value="206"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="u_components.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="7"/>
+        <CursorPos X="34" Y="28"/>
+        <UsageCount Value="202"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="u_sudoku_constants.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="25"/>
+        <UsageCount Value="202"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="u_text_file.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="35" Y="26"/>
+        <UsageCount Value="200"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="u_randomize_grid.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="75"/>
+        <CursorPos X="5" Y="62"/>
+        <UsageCount Value="201"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="u_colour_grid.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="25"/>
+        <CursorPos X="3" Y="53"/>
+        <UsageCount Value="211"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="f_dialog.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="For_Dialog"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="34"/>
+        <CursorPos X="40" Y="331"/>
+        <UsageCount Value="200"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="u_registry.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="61"/>
+        <CursorPos X="17"/>
+        <UsageCount Value="200"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="f_sudoku_key_and_grid.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form1"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="46"/>
+        <CursorPos X="88" Y="12"/>
+        <UsageCount Value="200"/>
+      </Unit9>
+      <Unit10>
+        <Filename Value="u_bitmap.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="53" Y="12"/>
+        <UsageCount Value="52"/>
+      </Unit10>
+      <Unit11>
+        <Filename Value="u_stopwatch.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="3" Y="20"/>
+        <UsageCount Value="27"/>
+      </Unit11>
+      <Unit12>
+        <Filename Value="u_suduku_registry.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="10"/>
+        <CursorPos X="36" Y="13"/>
+        <UsageCount Value="43"/>
+      </Unit12>
+      <Unit13>
+        <Filename Value="f_settings.pas"/>
+        <ComponentName Value="For_Settings"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="12"/>
+        <CursorPos X="6" Y="22"/>
+        <ComponentState Value="1"/>
+        <UsageCount Value="26"/>
+      </Unit13>
+      <Unit14>
+        <Filename Value="..\3 Sudoku - Open Save Dialogs\sudoku - new code\u_colour_grid.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="4"/>
+        <CursorPos X="20"/>
+        <UsageCount Value="92"/>
+      </Unit14>
+      <Unit15>
+        <Filename Value="f_sudoku.lfm"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="12"/>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit15>
+      <Unit16>
+        <Filename Value="..\Sudoku-Developer\f_sudoku_developer.pas"/>
+        <ComponentName Value="For_SudokuDeveloper"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="2"/>
+      </Unit16>
+      <Unit17>
+        <Filename Value="..\..\..\Desktop\tp55\Files\HELLO.PAS"/>
+        <UnitName Value="P_Hello"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="7"/>
+      </Unit17>
+      <Unit18>
+        <Filename Value="SsStopWatch.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="37"/>
+        <CursorPos Y="45"/>
+        <UsageCount Value="12"/>
+      </Unit18>
+      <Unit19>
+        <Filename Value="..\..\..\..\..\AppData\Local\Temp\Temp1_LicenseKeyGenSource.zip\U_LicenseGen.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="160"/>
+        <UsageCount Value="10"/>
+      </Unit19>
+    </Units>
+    <JumpHistory Count="4" HistoryIndex="3">
+      <Position1>
+        <Filename Value="f_sudoku.pas"/>
+        <Caret Line="670" Column="35" TopLine="642"/>
+      </Position1>
+      <Position2>
+        <Filename Value="f_sudoku.pas"/>
+        <Caret Line="217" Column="39" TopLine="202"/>
+      </Position2>
+      <Position3>
+        <Filename Value="f_sudoku.pas"/>
+        <Caret Line="371" Column="34" TopLine="343"/>
+      </Position3>
+      <Position4>
+        <Filename Value="f_sudoku.pas"/>
+        <Caret Line="670" Column="35" TopLine="652"/>
+      </Position4>
+    </JumpHistory>
+  </ProjectSession>
+</CONFIG>

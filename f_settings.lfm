@@ -1,0 +1,8 @@
+object For_Settings: TFor_Settings
+  Left = 288
+  Height = 243
+  Top = 227
+  Width = 272
+  Caption = 'Settings'
+  LCLVersion = '1.4.4.0'
+end
