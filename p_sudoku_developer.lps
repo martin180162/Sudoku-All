@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="9"/>
+    <BuildModes Active="Default"/>
+    <Units Count="5">
+      <Unit0>
+        <Filename Value="p_sudoku_developer.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="118"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="f_sudoku_developer.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="For_SudokuDeveloper"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="176"/>
+        <CursorPos X="69" Y="184"/>
+        <UsageCount Value="118"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="u_registry.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="76"/>
+        <CursorPos X="35" Y="82"/>
+        <UsageCount Value="118"/>
+        <Loaded Value="True"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="C:\lazarus\lcl\include\control.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="3653"/>
+        <CursorPos Y="3667"/>
+        <UsageCount Value="8"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="C:\lazarus\lcl\grids.pas"/>
+        <UnitName Value="Grids"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="9138"/>
+        <CursorPos Y="9145"/>
+        <UsageCount Value="9"/>
+      </Unit4>
+    </Units>
+    <JumpHistory Count="30" HistoryIndex="29">
+      <Position1>
+        <Filename Value="f_sudoku_developer.pas"/>
+        <Caret Line="78" Column="5" TopLine="62"/>
+      </Position1>
+      <Position2>
+        <Filename Value="f_sudoku_developer.pas"/>
+        <Caret Line="79" Column="5" TopLine="63"/>
+      </Position2>
+      <Position3>
+        <Filename Value="f_sudoku_developer.pas"/>
+        <Caret Line="463" TopLine="462"/>
+      </Position3>
+      <Position4>
+        <Filename Value="f_sudoku_developer.pas"/>
+        <Caret Line="634" Column="51" TopLine="624"/>
+      </Position4>
+      <Position5>
+        <Filename Value="f_sudoku_developer.pas"/>
+        <Caret Line="85" Column="3" TopLine="69"/>
+      </Position5>
+      <Position6>
+        <Filename Value="f_sudoku_developer.pas"/>
+        <Caret Line="84" Column="3" TopLine="68"/>
+      </Position6>
+      <Position7>
+        <Filename Value="f_sudoku_developer.pas"/>
+        <Caret Line="85" Column="3" TopLine="69"/>
+      </Position7>
+      <Position8>
+        <Filename Value="f_sudoku_developer.pas"/>
+        <Caret Line="86" Column="3" TopLine="70"/>
+      </Position8>
+      <Position9>
+        <Filename Value="f_sudoku_developer.pas"/>
+        <Caret Line="85" Column="3" TopLine="69"/>
+      </Position9>
+      <Position10>
+        <Filename Value="f_sudoku_developer.pas"/>
+        <Caret Line="86" Column="3" TopLine="70"/>
+      </Position10>
+      <Position11>
+        <Filename Value="f_sudoku_developer.pas"/>
+        <Caret Line="426" Column="19" TopLine="419"/>
+      </Position11>
+      <Position12>
+        <Filename Value="f_sudoku_developer.pas"/>
+        <Caret Line="425" Column="19" TopLine="418"/>
+      </Position12>
+      <Position13>
+        <Filename Value="f_sudoku_developer.pas"/>
+        <Caret Line="424" Column="19" TopLine="417"/>
+      </Position13>
+      <Position14>
+        <Filename Value="f_sudoku_developer.pas"/>
+        <Caret Line="423" Column="19" TopLine="416"/>
+      </Position14>
+      <Position15>
+        <Filename Value="f_sudoku_developer.pas"/>
+        <Caret Line="424" Column="19" TopLine="417"/>
+      </Position15>
+      <Position16>
+        <Filename Value="f_sudoku_developer.pas"/>
+        <Caret Line="425" Column="19" TopLine="418"/>
+      </Position16>
+      <Position17>
+        <Filename Value="f_sudoku_developer.pas"/>
+        <Caret Line="426" Column="19" TopLine="419"/>
+      </Position17>
+      <Position18>
+        <Filename Value="f_sudoku_developer.pas"/>
+        <Caret Line="425" Column="19" TopLine="418"/>
+      </Position18>
+      <Position19>
+        <Filename Value="f_sudoku_developer.pas"/>
+        <Caret Line="426" Column="19" TopLine="419"/>
+      </Position19>
+      <Position20>
+        <Filename Value="f_sudoku_developer.pas"/>
+        <Caret Line="425" Column="19" TopLine="418"/>
+      </Position20>
+      <Position21>
+        <Filename Value="f_sudoku_developer.pas"/>
+        <Caret Line="426" Column="19" TopLine="419"/>
+      </Position21>
+      <Position22>
+        <Filename Value="f_sudoku_developer.pas"/>
+        <Caret Line="423" Column="36" TopLine="420"/>
+      </Position22>
+      <Position23>
+        <Filename Value="f_sudoku_developer.pas"/>
+        <Caret Line="152" Column="36" TopLine="137"/>
+      </Position23>
+      <Position24>
+        <Filename Value="f_sudoku_developer.pas"/>
+        <Caret Line="411" Column="36" TopLine="407"/>
+      </Position24>
+      <Position25>
+        <Filename Value="f_sudoku_developer.pas"/>
+        <Caret Line="425" Column="35" TopLine="422"/>
+      </Position25>
+      <Position26>
+        <Filename Value="f_sudoku_developer.pas"/>
+        <Caret Line="410" Column="40" TopLine="407"/>
+      </Position26>
+      <Position27>
+        <Filename Value="f_sudoku_developer.pas"/>
+        <Caret Line="163" Column="3" TopLine="132"/>
+      </Position27>
+      <Position28>
+        <Filename Value="f_sudoku_developer.pas"/>
+        <Caret Line="154" Column="46" TopLine="137"/>
+      </Position28>
+      <Position29>
+        <Filename Value="f_sudoku_developer.pas"/>
+        <Caret Line="150" Column="2" TopLine="139"/>
+      </Position29>
+      <Position30>
+        <Filename Value="f_sudoku_developer.pas"/>
+        <Caret Line="604" Column="49" TopLine="588"/>
+      </Position30>
+    </JumpHistory>
+  </ProjectSession>
+</CONFIG>

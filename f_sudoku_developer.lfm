@@ -1,0 +1,475 @@
+object For_SudokuDeveloper: TFor_SudokuDeveloper
+  Left = 528
+  Height = 190
+  Top = 335
+  Width = 532
+  BorderIcons = [biSystemMenu, biMinimize]
+  Caption = 'Sudoku Developer'
+  ClientHeight = 170
+  ClientWidth = 532
+  Menu = MaiMen_Developer
+  OnCreate = FormCreate
+  Position = poScreenCenter
+  LCLVersion = '1.4.4.0'
+  object GroBox_SettingsSelection: TGroupBox
+    Left = 544
+    Height = 144
+    Top = 287
+    Width = 443
+    Caption = 'Choose Selection'
+    ClientHeight = 124
+    ClientWidth = 439
+    TabOrder = 0
+    Visible = False
+    object GroBox_Settings: TGroupBox
+      Left = 8
+      Height = 128
+      Top = 8
+      Width = 416
+      Caption = 'Settings'
+      ClientHeight = 108
+      ClientWidth = 412
+      TabOrder = 0
+      object CheBox_ShowSolution: TCheckBox
+        Left = 16
+        Height = 19
+        Top = 8
+        Width = 96
+        Alignment = taLeftJustify
+        Caption = 'Show Solution'
+        OnChange = CheBox_SettingsChange
+        TabOrder = 0
+      end
+      object Lab_Solution: TLabel
+        Left = 128
+        Height = 15
+        Top = 12
+        Width = 286
+        Caption = 'Move mouse cursor over Sudoku Grid to hide Solution'
+        ParentColor = False
+      end
+      object Lab_Solution1: TLabel
+        Left = 152
+        Height = 15
+        Top = 32
+        Width = 230
+        Caption = 'then click the Show Solution box to show it.'
+        ParentColor = False
+        Visible = False
+      end
+      object CheBox_Grid: TCheckBox
+        Left = 16
+        Height = 19
+        Top = 64
+        Width = 95
+        Alignment = taLeftJustify
+        Caption = 'Show Grid       '
+        Enabled = False
+        OnChange = CheBox_SettingsChange
+        ParentFont = False
+        TabOrder = 1
+      end
+      object But_Grid: TButton
+        Left = 128
+        Height = 25
+        Top = 64
+        Width = 75
+        Caption = '&Grid'
+        Enabled = False
+        TabOrder = 2
+      end
+      object Lab_ShowGrid: TLabel
+        Left = 216
+        Height = 15
+        Top = 64
+        Width = 183
+        Caption = 'Click Button to display Colour Grid'
+        ParentColor = False
+        Visible = False
+      end
+    end
+  end
+  object GroBox_CharactersColoursImages: TGroupBox
+    Left = 544
+    Height = 256
+    Top = 17
+    Width = 328
+    Caption = 'Characters, Colours + Images'
+    ClientHeight = 236
+    ClientWidth = 324
+    TabOrder = 1
+    object PagCon_Selection: TPageControl
+      Left = 8
+      Height = 224
+      Top = 0
+      Width = 312
+      ActivePage = TabShe_AToI
+      TabIndex = 0
+      TabOrder = 0
+      object TabShe_AToI: TTabSheet
+        ClientHeight = 196
+        ClientWidth = 304
+        object Lab_SudokuMessage1: TLabel
+          Left = 64
+          Height = 15
+          Top = 160
+          Width = 8
+          Caption = 'A'
+          ParentColor = False
+          Visible = False
+        end
+        object Lab_SudokuMessage: TLabel
+          Left = 85
+          Height = 15
+          Top = 144
+          Width = 8
+          Caption = 'A'
+          ParentColor = False
+          Visible = False
+        end
+        object GroBox_CharactersAlterGrid: TGroupBox
+          Left = 8
+          Height = 128
+          Top = 8
+          Width = 280
+          Caption = '    Alter Grid'
+          ClientHeight = 108
+          ClientWidth = 276
+          TabOrder = 0
+          object Edi_CharactersAltergrid: TEdit
+            Left = 14
+            Height = 50
+            Top = 8
+            Width = 34
+            Font.Height = -31
+            OnChange = Edi_CharactersAltergridChange
+            OnClick = Edi_CharactersAltergridClick
+            OnKeyPress = Edi_CharactersAltergridKeyPress
+            ParentFont = False
+            TabOrder = 0
+          end
+          object StriGri_CharactersAlterGrid: TStringGrid
+            Left = 56
+            Height = 50
+            Top = 8
+            Width = 208
+            ColCount = 10
+            DefaultColWidth = 20
+            DefaultRowHeight = 20
+            RowCount = 2
+            TabOrder = 2
+          end
+          object But_CharactersAlterGridSave: TButton
+            Left = 72
+            Height = 25
+            Hint = 'Creates a new Sudoku Grid'
+            Top = 72
+            Width = 75
+            Caption = 'Save'
+            OnClick = But_CharactersAlterGridSaveClick
+            TabOrder = 1
+          end
+          object But_CharactersAlterGridCancel: TButton
+            Left = 176
+            Height = 25
+            Hint = 'Revert Sudoku Grid back  to ( A To I )'
+            Top = 72
+            Width = 75
+            Caption = 'Cancel'
+            OnClick = But_CharactersAlterGridCancelClick
+            TabOrder = 3
+          end
+        end
+      end
+      object TabShe_Characters: TTabSheet
+        Caption = 'Characters'
+      end
+      object TabShe_Colours: TTabSheet
+        Caption = 'Colours'
+      end
+      object TabShe_Images: TTabSheet
+        Caption = 'Images'
+      end
+    end
+    object GroupBox1: TGroupBox
+      Left = 16
+      Height = 136
+      Top = 272
+      Width = 232
+      Caption = 'GroupBox1'
+      ClientHeight = 116
+      ClientWidth = 228
+      TabOrder = 1
+      object StringGrid1: TStringGrid
+        Left = 8
+        Height = 48
+        Top = 8
+        Width = 209
+        ColCount = 10
+        DefaultColWidth = 20
+        DefaultRowHeight = 20
+        RowCount = 2
+        ScrollBars = ssNone
+        TabOrder = 0
+      end
+      object BitBtn_Save: TBitBtn
+        Left = 72
+        Height = 30
+        Top = 72
+        Width = 75
+        Default = True
+        DefaultCaption = True
+        Kind = bkOK
+        ModalResult = 1
+        TabOrder = 1
+      end
+    end
+  end
+  object GroBox_Selection: TGroupBox
+    Left = 11
+    Height = 139
+    Top = 17
+    Width = 506
+    Caption = 'Choose Selection'
+    ClientHeight = 119
+    ClientWidth = 502
+    TabOrder = 2
+    object Lab_SelectionCharacters: TLabel
+      Left = 528
+      Height = 23
+      Top = 16
+      Width = 81
+      Caption = 'Characters'
+      Enabled = False
+      Font.Height = -17
+      ParentColor = False
+      ParentFont = False
+    end
+    object Lab_SelectionColours: TLabel
+      Left = 166
+      Height = 23
+      Top = 10
+      Width = 58
+      Caption = 'Colours'
+      Enabled = False
+      Font.Height = -17
+      ParentColor = False
+      ParentFont = False
+    end
+    object ComBox_Characters: TComboBox
+      Left = 616
+      Height = 23
+      Top = 16
+      Width = 88
+      Enabled = False
+      ItemHeight = 15
+      ItemIndex = 1
+      Items.Strings = (
+        'Shown'
+        'Not Shown'
+      )
+      OnChange = ComBox_SelectionChange
+      Style = csDropDownList
+      TabOrder = 0
+      Text = 'Not Shown'
+    end
+    object ComBox_Images: TComboBox
+      Left = 406
+      Height = 23
+      Top = 10
+      Width = 88
+      Enabled = False
+      ItemHeight = 15
+      ItemIndex = 1
+      Items.Strings = (
+        'Shown'
+        'Not Shown'
+      )
+      OnChange = ComBox_SelectionChange
+      Style = csDropDownList
+      TabOrder = 1
+      Text = 'Not Shown'
+    end
+    object ComBox_Colours: TComboBox
+      Left = 232
+      Height = 23
+      Top = 10
+      Width = 88
+      Enabled = False
+      ItemHeight = 15
+      ItemIndex = 1
+      Items.Strings = (
+        'Shown'
+        'Not Shown'
+      )
+      OnChange = ComBox_SelectionChange
+      Style = csDropDownList
+      TabOrder = 2
+      Text = 'Not Shown'
+    end
+    object Lab_SelectionImages: TLabel
+      Left = 337
+      Height = 23
+      Top = 10
+      Width = 55
+      Caption = 'Images'
+      Enabled = False
+      Font.Height = -17
+      ParentColor = False
+      ParentFont = False
+    end
+    object Sha_SelectionLine: TShape
+      Left = 8
+      Height = 1
+      Top = 44
+      Width = 496
+    end
+    object Lab_Selection: TLabel
+      Left = 72
+      Height = 15
+      Top = 59
+      Width = 328
+      Caption = 'Click to decide which of the above will be Shown / Not Shown'
+      ParentColor = False
+    end
+    object Lab_Selection1: TLabel
+      Left = 89
+      Height = 15
+      Top = 85
+      Width = 285
+      Caption = 'then click Select in Sudoku Grid to reveal the Selection'
+      ParentColor = False
+    end
+    object Lab_SelectionAToI: TLabel
+      Left = 18
+      Height = 23
+      Top = 10
+      Width = 42
+      Caption = 'A to I'
+      Font.Height = -17
+      ParentColor = False
+      ParentFont = False
+    end
+    object ComBox_AToI: TComboBox
+      Left = 72
+      Height = 23
+      Top = 10
+      Width = 83
+      ItemHeight = 15
+      ItemIndex = 1
+      Items.Strings = (
+        'Shown'
+        'Not Shown'
+      )
+      OnChange = ComBox_SelectionChange
+      Style = csDropDownList
+      TabOrder = 3
+      Text = 'Not Shown'
+    end
+  end
+  object GroBox_Tutorial: TGroupBox
+    Left = 11
+    Height = 184
+    Top = 168
+    Width = 355
+    Caption = 'Tutorial'
+    ClientHeight = 164
+    ClientWidth = 351
+    TabOrder = 3
+    Visible = False
+    object RadBut_On: TRadioButton
+      Left = 293
+      Height = 19
+      Top = 11
+      Width = 36
+      Caption = 'On'
+      OnClick = RadBut_Off_Or_OnClick
+      TabOrder = 1
+    end
+    object RadBut_Off: TRadioButton
+      Left = 35
+      Height = 19
+      Top = 11
+      Width = 37
+      Caption = 'Off'
+      Checked = True
+      OnClick = RadBut_Off_Or_OnClick
+      TabOrder = 0
+      TabStop = True
+    end
+    object StrGri_Tutor: TStringGrid
+      Left = 80
+      Height = 44
+      Top = 1
+      Width = 202
+      CellHintPriority = chpAllNoDefault
+      Color = clWhite
+      ColCount = 10
+      DefaultColWidth = 20
+      DefaultRowHeight = 20
+      RowCount = 2
+      ScrollBars = ssNone
+      TabOrder = 2
+      OnDrawCell = StrGri_TutorDrawCell
+    end
+    object Sha_TutorLine: TShape
+      Left = 6
+      Height = 1
+      Top = 52
+      Width = 340
+      Brush.Color = clDefault
+    end
+    object Lab_ActivateDeactivate: TLabel
+      Left = 100
+      Height = 15
+      Top = 138
+      Width = 167
+      Caption = 'to Activate / Deactivate Tutorial'
+      ParentColor = False
+    end
+    object Lab_DeactivateTutorial: TLabel
+      Left = 80
+      Height = 15
+      Top = 87
+      Width = 210
+      Caption = 'Deactivate Tutorial :- Click the Off circle'
+      ParentColor = False
+    end
+    object Lab_ActivateTutorial: TLabel
+      Left = 85
+      Height = 15
+      Top = 66
+      Width = 197
+      Caption = 'Activate Tutorial :- Click the On circle'
+      ParentColor = False
+    end
+    object Sha_TutorLine1: TShape
+      Left = 6
+      Height = 1
+      Top = 113
+      Width = 340
+      Brush.Color = clDefault
+    end
+    object Lab_MoveMouse: TLabel
+      Left = 80
+      Height = 15
+      Top = 118
+      Width = 204
+      Caption = 'Move Mouse Cursor over Sudoku Grid '
+      ParentColor = False
+    end
+  end
+  object MaiMen_Developer: TMainMenu
+    left = 29
+    top = 387
+    object MenIte_Developer_Tutorial: TMenuItem
+      Caption = 'Tutorial'
+      Visible = False
+      OnClick = MenIte_Developer_TutorialClick
+    end
+    object MenIte_Developer_ChooseSelection: TMenuItem
+      Caption = 'Choose &Selection'
+      OnClick = MenIte_Developer_ChooseSelectionClick
+    end
+  end
+end
